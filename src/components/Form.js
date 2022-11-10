@@ -1,12 +1,15 @@
 import React from "react";
 import {Button, Col, DatePicker, Divider, Form, Input, Row, Select} from 'antd';
+import {useNavigate} from "react-router-dom";
 
 const {Option, OptGroup} = Select;
 
 function EmailForm() {
+  const navigate = useNavigate()
 
   const handleAdd = (values) => {
     console.log('Success:', values);
+    navigate('/')
   };
 
   return (

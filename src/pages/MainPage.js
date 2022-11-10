@@ -1,8 +1,11 @@
 import React from 'react'
 import {Button, Layout, Table} from 'antd';
 import {Content, Header} from "antd/es/layout/layout";
+import {useNavigate} from "react-router-dom";
 
 function MainPage() {
+  const navigate = useNavigate()
+
   const columns = [
     {
       title: 'Name',
@@ -35,6 +38,10 @@ function MainPage() {
     }
   ]
 
+  const handleAdd = () => {
+    navigate('/create')
+  };
+
   return (
       <Layout>
         <Header>
@@ -43,7 +50,7 @@ function MainPage() {
             <div>You can communicate with your customers directly from the section.</div>
           </div>
           <Button
-              // onClick={handleAdd}
+              onClick={handleAdd}
               type="primary"
               className="primary-button"
           >
