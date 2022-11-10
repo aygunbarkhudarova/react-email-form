@@ -1,6 +1,7 @@
 import React from "react";
 import {Button, Col, DatePicker, Divider, Form, Input, Row, Select} from 'antd';
 import {useNavigate} from "react-router-dom";
+import HtmlEditor from "./HtmlEditor";
 
 const {Option, OptGroup} = Select;
 
@@ -128,6 +129,12 @@ function EmailForm() {
             >
               <Input placeholder="Enter subject here"/>
             </Form.Item>
+          </Col>
+        </Row>
+        <Divider/>
+        <Row>
+          <Col span={24}>
+            <HtmlEditor/>
           </Col>
         </Row>
         <Divider/>

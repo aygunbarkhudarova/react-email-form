@@ -1,0 +1,25 @@
+.ql-editor {
+  height: 10rem !important;
+}
+
+.ql-toolbar.ql-snow .ql-formats:not(:last-child) {
+  border-right: 1px solid gray;
+  padding-right: 10px;
+}
+
+.ql-toolbar.ql-snow {
+  background-color: #f8f8f8;
+  padding-right: calc(70vw - 50rem) !important;
+}
+
+.quill {
+  text-align: start;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label::before {
+  content: "Styles" !important;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label::before {
+  content: "Format" !important;
+}
