@@ -1,0 +1,25 @@
+.layout-background {
+  background-color: white !important;
+  border: 1px solid #ececec;
+  padding: 1rem;
+  border-radius: 5px;
+  height: min-content;
+  margin: 1rem;
+}
+
+.primary-button {
+  background-color: green !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.total-count {
+  text-align: center;
+  font-weight: 500;
+  margin: 2rem 0;
+}
+
+.feedback-count {
+  display: flex;
+  justify-content: space-between;
+}

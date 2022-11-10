@@ -1,0 +1,38 @@
+.ant-layout-header {
+  background-color: white !important;
+  line-height: 18px !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ant-table-thead .ant-table-cell {
+  background-color: white;
+}
+
+.ant-layout {
+  height: 100vh !important;
+}
+
+.ant-layout-content {
+  margin: 1rem;
+}
+
+.ant-layout-sider {
+  height: 18rem !important;
+  min-width: 25% !important;
+  background-color: white !important;
+  margin-left: unset !important;
+}
+
+.ant-form-item {
+  margin-bottom: 12px !important;
+}
+
+.ant-form-item-label {
+  font-weight: 500;
+}
+
+.ant-divider-horizontal {
+  margin: 12px 0 !important;
+}
