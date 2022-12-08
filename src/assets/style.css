@@ -23,3 +23,8 @@
   display: flex;
   justify-content: space-between;
 }
+.edit-button{
+  background-color: #FF8E00FF!important;
+  color: white!important;
+  border: none!important;
+}

@@ -1,42 +1,61 @@
 import React from 'react'
-import {Button, Layout, Table} from 'antd';
+import {Button, Layout, Popconfirm, Space, Table} from 'antd';
 import {Content, Header} from "antd/es/layout/layout";
 import {useNavigate} from "react-router-dom";
+
+export const dataSource = []
 
 function MainPage() {
   const navigate = useNavigate()
 
   const columns = [
     {
+      title: '#',
+      dataIndex: 'key',
+    },
+    {
       title: 'Name',
       dataIndex: 'name',
-      key: 'name',
     },
     {
       title: 'Type',
       dataIndex: 'type',
-      key: 'type',
     },
     {
       title: 'Date',
       dataIndex: 'date',
-      key: 'date',
-    }
-  ];
-  const data = [
-    {
-      key: '0',
-      name: 'Edward King 0',
-      type: 'type1',
-      date: '10.11',
     },
     {
-      key: '1',
-      name: 'Edward King 1',
-      type: 'type2',
-      date: '10.11',
-    }
-  ]
+      title: 'Action',
+      dataIndex: 'action',
+      render: (_, record) =>
+          <Space>
+            <Button
+                onClick={() => handleEdit(record)} className="edit-button">Edit</Button>
+            <Popconfirm title="Sure to delete?" onConfirm={() => handleDelete(record.key)}>
+              <Button type="primary" danger={true}>Delete</Button>
+            </Popconfirm>
+          </Space>
+    },
+  ];
+  const handleEdit = (record) => {
+    localStorage.setItem("key", record.key)
+    localStorage.setItem("name", record.name)
+    localStorage.setItem("date", record.date)
+    localStorage.setItem("to", record.to)
+    localStorage.setItem("template", record.template)
+    localStorage.setItem("subject", record.subject)
+    navigate(`/edit/${record.key}`)
+  }
+
+  const handleDelete = (key) => {
+    let index = dataSource.map(function (e) {
+      return e.key
+    }).indexOf(key)
+    dataSource.splice(index, 1);
+
+    navigate('/')
+  };
 
   const handleAdd = () => {
     navigate('/create')
@@ -58,7 +77,7 @@ function MainPage() {
           </Button>
         </Header>
         <Content>
-          <Table dataSource={data} columns={columns}/>
+          <Table dataSource={dataSource} columns={columns}/>
         </Content>
       </Layout>
   );

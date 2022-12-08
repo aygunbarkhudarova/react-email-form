@@ -8,6 +8,7 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage/>}/>
         <Route path='/create' element={<CreatePage/>}/>
+        <Route path='/edit/:id' element={<CreatePage/>}/>
       </Routes>
   );
 }
